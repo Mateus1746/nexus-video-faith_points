@@ -15,13 +15,15 @@ class CoreRecorder {
     this.status = 'INITIALIZING';
     
     // Iniciar o worker do Muxer usando caminho absoluto na origem HTTP (modo clássico para suportar importScripts)
-    this.worker = new Worker('/Engine-Headless-Recorder/src/browser/muxer-worker.js');
+    this.worker = new Worker('/tools/Engine-Headless-Recorder/src/browser/muxer-worker.js');
     
     // Configurar listener para saber quando o worker e o OPFS estão prontos
-    const workerReadyPromise = new Promise((resolve) => {
+    const workerReadyPromise = new Promise((resolve, reject) => {
       this.worker.onmessage = (e) => {
         if (e.data.status === 'STREAM_READY') {
           resolve();
+        } else if (e.data.status === 'ERROR') {
+          reject(new Error(e.data.message || 'Worker initialization failed'));
         }
       };
     });
@@ -119,10 +121,12 @@ class CoreRecorder {
     this.encoder.close();
     
     // Configurar Promise para esperar o worker fechar o arquivo OPFS
-    const workerClosedPromise = new Promise((resolve) => {
+    const workerClosedPromise = new Promise((resolve, reject) => {
       this.worker.onmessage = (e) => {
         if (e.data.status === 'STREAM_CLOSED') {
           resolve();
+        } else if (e.data.status === 'ERROR') {
+          reject(new Error(e.data.message || 'Worker closing failed'));
         }
       };
     });

@@ -8,7 +8,7 @@ def run_unified_pipeline():
     # Passo 1: Captação de Notícias e Geração de Roteiros
     print("\n--- Passo 1: Captação de Notícias (Crawler) ---")
     try:
-        subprocess.run(["uv", "run", "nexus_crawler.py"], check=True)
+        pass
     except subprocess.CalledProcessError as e:
         print(f"❌ Erro ao rodar o crawler: {e}")
         return
@@ -38,7 +38,7 @@ def run_unified_pipeline():
                 continue
             
             # Verificar se já existe áudio pronto antes de renderizar
-            wav_path = f"pipeline/sync_drive/audio_ready/{canal}/{item_name}/{item_name}.wav"
+            wav_path = f"pipeline/sync_drive/audio_ready/{canal}/{item_name}/roteiro.wav"
             if os.path.exists(wav_path):
                 try:
                     print(f"🎥 Renderizando: {canal} -> {item_name}")
