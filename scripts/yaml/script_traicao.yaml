@@ -1,0 +1,38 @@
+metadata:
+  title: "Gestão da Traição: O Protocolo de Davi e Aitofel"
+  description: "Análise estratégica da traição no centro de comando de Davi."
+  output_file: "gestao_da_traicao.mp4"
+  fps: 30
+  width: 1920
+  height: 1080
+
+segments:
+  - type: "verse"
+    text: "Pois não era um inimigo que me afrontava; então eu o teria suportado. - Salmos 55:12"
+    duration: 8
+    start_time: 0
+    bg_image: "Geopolitical_command_and_control_center_202605041546.jpeg"
+
+  - type: "narration"
+    text: "A traição não é um erro emocional. É uma falha de protocolo no círculo interno."
+    duration: 7
+    start_time: 8
+    bg_image: "Geopolitical_command_and_control_center_202605041546.jpeg"
+
+  - type: "narration"
+    text: "Aitofel era o arquiteto da estratégia de Davi. Sua deserção foi um ataque ao núcleo do sistema."
+    duration: 8
+    start_time: 15
+    bg_image: "Geopolitical_command_and_control_center_202605041546.jpeg"
+
+  - type: "narration"
+    text: "Davi não reagiu com fúria. Ele reagiu com oração e contra-estratégia."
+    duration: 7
+    start_time: 23
+    bg_image: "Geopolitical_command_and_control_center_202605041546.jpeg"
+
+  - type: "macro"
+    text: "ESTRATÉGIA SOBERANA"
+    duration: 5
+    start_time: 30
+    bg_image: "Geopolitical_command_and_control_center_202605041546.jpeg"

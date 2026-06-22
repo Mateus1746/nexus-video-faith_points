@@ -1,0 +1,115 @@
+{
+  "project": "Pontos da F\u00e9",
+  "version": "1.0",
+  "base_path": "/home/mateus/.gemini/projetos/nexus_media/video/faith_points/",
+  "images": [
+    {
+      "id": "c2_center",
+      "filename": "Geopolitical_command_and_control_center_202605041546.jpeg",
+      "description": "Centro de Comando e Controle moderno com telas globais, luzes azuis e \u00e2mbar. Ideal para an\u00e1lises de estrat\u00e9gia, soberania e c\u00edrculos internos.",
+      "tags": [
+        "estrat\u00e9gia",
+        "comando",
+        "vigil\u00e2ncia",
+        "geopol\u00edtica",
+        "tecnologia"
+      ]
+    },
+    {
+      "id": "noir_void",
+      "filename": "assets/bg_noir.jpg",
+      "description": "Fundo preto profundo com ru\u00eddo cinematogr\u00e1fico. Ideal para momentos de sil\u00eancio, reflex\u00e3o sobre a morte ou v\u00e1cuo de poder.",
+      "tags": [
+        "noir",
+        "vazio",
+        "sil\u00eancio",
+        "morte",
+        "minimalismo"
+      ]
+    },
+    {
+      "id": "rounded_frame",
+      "filename": "assets/rounded_bg.jpg",
+      "description": "Moldura de ret\u00e2ngulo arredondado sobre fundo preto. Est\u00e9tica de monitor t\u00e1tico.",
+      "tags": [
+        "moldura",
+        "interface",
+        "foco"
+      ]
+    },
+    {
+      "id": "war_room_hologram",
+      "filename": "War_room_with_holographic_maps_202606151120.jpeg",
+      "description": "Sala de guerra com mapas hologr\u00e1ficos de Israel antigo.",
+      "tags": [
+        "aitofel",
+        "estrat\u00e9gia",
+        "cinematic"
+      ]
+    },
+    {
+      "id": "ancient_scrolls",
+      "filename": "Ancient_scrolls_and_tablet_202606151120.jpeg",
+      "description": "Pergaminhos antigos ao lado de um tablet moderno.",
+      "tags": [
+        "aitofel",
+        "estrat\u00e9gia",
+        "cinematic"
+      ]
+    },
+    {
+      "id": "crown_shadows",
+      "filename": "Throne_room_with_crown_shadows_202606151120.jpeg",
+      "description": "Sala do trono vazia com uma coroa no ch\u00e3o.",
+      "tags": [
+        "aitofel",
+        "estrat\u00e9gia",
+        "cinematic"
+      ]
+    },
+    {
+      "id": "spy_whispering",
+      "filename": "Man_whispering_into_wall_202606151120.jpeg",
+      "description": "Espi\u00e3o sussurrando em um corredor escuro.",
+      "tags": [
+        "aitofel",
+        "estrat\u00e9gia",
+        "cinematic"
+      ]
+    },
+    {
+      "id": "aitofel_death",
+      "filename": "Stone_room_with_oil_lamp_202606151120.jpeg",
+      "description": "Quarto de pedra com l\u00e2mpada de \u00f3leo e corda.",
+      "tags": [
+        "aitofel",
+        "estrat\u00e9gia",
+        "cinematic"
+      ]
+    },
+    {
+      "id": "desert_ruins",
+      "filename": "Desert_landscape_with_ruins_202606151120.jpeg",
+      "description": "Paisagem des\u00e9rtica com ru\u00ednas ao amanhecer.",
+      "tags": [
+        "aitofel",
+        "estrat\u00e9gia",
+        "cinematic"
+      ]
+    }
+  ],
+  "placeholders_suggested": [
+    {
+      "id": "ancient_map",
+      "filename": "assets/ancient_jerusalem.jpg",
+      "description": "Mapa t\u00e1tico de Jerusal\u00e9m antiga ou deserto da Jud\u00e9ia em tons s\u00e9pia.",
+      "usage": "Contextualiza\u00e7\u00e3o geogr\u00e1fica de fugas e cercos."
+    },
+    {
+      "id": "iron_anvil",
+      "filename": "assets/iron_anvil.jpg",
+      "description": "Bigorna de ferro em oficina escura com fa\u00edscas. Simbolismo de forja de car\u00e1ter ou puni\u00e7\u00e3o.",
+      "usage": "Met\u00e1foras de prova\u00e7\u00e3o e resist\u00eancia."
+    }
+  ]
+}

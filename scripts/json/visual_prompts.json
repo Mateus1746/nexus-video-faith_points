@@ -1,0 +1,37 @@
+{
+  "project": "Pontos da Fé",
+  "episode": "O Protocolo de Aitofel",
+  "style_reference": "Sacred Realism Noir, cinematic lighting, 8k, tactical suspense, amber and deep blue tones, heavy shadows",
+  "visual_prompts": [
+    {
+      "segment": 0,
+      "type": "verse",
+      "prompt": "Extreme close-up of an ancient stone wall in Jerusalem at night, tactical amber lighting, atmospheric dust, cinematic depth of field, high-end noir aesthetic."
+    },
+    {
+      "segment": 1,
+      "type": "narration",
+      "prompt": "A modern geopolitical war room, holographic maps of ancient Israel, flickering monitors, silhouette of a strategist in a dark suit, deep blue and amber lighting."
+    },
+    {
+      "segment": 3,
+      "type": "narration",
+      "prompt": "Top-down view of a tactical wooden table with old scrolls and modern communication devices mixed together, hands of a strategist moving wooden pieces, high contrast shadows."
+    },
+    {
+      "segment": 7,
+      "type": "narration",
+      "prompt": "Dark corridor in an ancient stone palace, silhouette of a spy leaning against a wall, cinematic lighting through a slit window, tactical noir atmosphere."
+    },
+    {
+      "segment": 11,
+      "type": "narration",
+      "prompt": "A lonely table in a dark room, a single oil lamp burning, a rope neatly coiled on the side, cold stone walls, dramatic chiaroscuro lighting."
+    },
+    {
+      "segment": 15,
+      "type": "narration",
+      "prompt": "The ruins of an ancient temple at dawn, fog covering the ground, silhouette of an empty throne, epic cinematic scale, melancholic noir colors."
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+metadata:
+  title: "The Betrayal Protocol: Managing Inner Circle Failure"
+  description: "A strategic briefing on David's response to Ahithophel's desertion. Sacred Realism Noir."
+  output_file: "the_betrayal_protocol_1080p.mp4"
+  fps: 30
+  width: 1920
+  height: 1080
+
+segments:
+  # 0:00 - 0:45: THE HOOK
+  - type: "narration"
+    text: "Most people fall not because they are weak, but because they are naive. They believe loyalty is the default setting of the human heart. It is not."
+    duration: 15
+    start_time: 0
+    bg_image: "Geopolitical_command_and_control_center_202605041546.jpeg"
+  
+  - type: "macro"
+    text: "THE LOYALTY ILLUSION"
+    duration: 10
+    start_time: 15
+    bg_image: "Geopolitical_command_and_control_center_202605041546.jpeg"
+
+  - type: "narration"
+    text: "King David, the most capable administrator of his era, made a fatal architectural error. He handed the keys to his kingdom’s logic to one man: Ahithophel."
+    duration: 20
+    start_time: 25
+    bg_image: "Throne_room_with_crown_shadows_202606151120.jpeg"
+
+  # 0:45 - 2:15: THE ARCHIVE (Context)
+  - type: "verse"
+    text: "For it was not an enemy that reproached me; then I could have borne it. - Psalm 55:12"
+    duration: 15
+    start_time: 45
+    bg_image: "Ancient_scrolls_and_tablet_202606151120.jpeg"
+
+  - type: "narration"
+    text: "Ahithophel didn't betray David because of hatred. Men rarely betray out of passion. They betray out of calculation. He saw the rebellion rising and concluded that David's system was depreciating. He chose to relocate his assets to a rising power."
+    duration: 30
+    start_time: 60
+    bg_image: "Ancient_scrolls_and_tablet_202606151120.jpeg"
+
+  - type: "macro"
+    text: "CALCULATED PERFIDY"
+    duration: 15
+    start_time: 90
+    bg_image: "Man_whispering_into_wall_202606151120.jpeg"
+
+  - type: "narration"
+    text: "The traitor is a risk analyst. He sniffs out weakness and jumps ship before the impact. When someone turns their back on you, it isn't personal. It’s the human ego operating in its natural state of survival."
+    duration: 30
+    start_time: 105
+    bg_image: "War_room_with_holographic_maps_202606151120.jpeg"
+
+  # 2:15 - 3:45: STRATEGIC ANALYSIS (The Reaction)
+  - type: "narration"
+    text: "David’s response was not emotional fury. It was counter-intelligence. He understood that against precise information, you don't use brute force. You introduce noise into the enemy's system. He deployed a sleeper agent to corrupt the logic from within."
+    duration: 30
+    start_time: 135
+    bg_image: "Man_whispering_into_wall_202606151120.jpeg"
+
+  - type: "macro"
+    text: "SYSTEMIC SABOTAGE"
+    duration: 15
+    start_time: 165
+    bg_image: "War_room_with_holographic_maps_202606151120.jpeg"
+
+  - type: "narration"
+    text: "Ahithophel proposed the perfect strike. But Absalom, seduced by the aesthetics of power, chose the showman over the architect. In the game of power, if you fail to destroy the king quickly, your own treason becomes your death warrant."
+    duration: 30
+    start_time: 180
+    bg_image: "Throne_room_with_crown_shadows_202606151120.jpeg"
+
+  - type: "narration"
+    text: "When Ahithophel saw his algorithm ignored, he didn't argue. He went home, set his house in order, and terminated his existence. He understood causal determinism: if the correct protocol is rejected, the disaster is already written."
+    duration: 30
+    start_time: 210
+    bg_image: "Stone_room_with_oil_lamp_202606151120.jpeg"
+
+  # 3:45 - 5:00: THE ORDER
+  - type: "narration"
+    text: "The comfort of Scripture is not that men will be good to you. It is that God gives you the mind of David to anticipate the strike. If you are surrounded by wolves, stop acting like a lamb."
+    duration: 30
+    start_time: 240
+    bg_image: "Desert_landscape_with_ruins_202606151120.jpeg"
+
+  - type: "narration"
+    text: "Monitor the signals. Blind your data. And learn to read the interest behind the words. Your survival depends on how quickly you eliminate the Ahithophels in your life."
+    duration: 20
+    start_time: 270
+    bg_image: "Desert_landscape_with_ruins_202606151120.jpeg"
+
+  - type: "macro"
+    text: "REMAIN VIGILANT"
+    duration: 10
+    start_time: 290
+    bg_image: "Geopolitical_command_and_control_center_202605041546.jpeg"

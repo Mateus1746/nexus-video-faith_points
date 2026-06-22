@@ -1,0 +1,13 @@
+{
+  "filename": "rounded_bg.jpg",
+  "path": "assets/rounded_bg.jpg",
+  "resolution": "1280x720",
+  "aspect_ratio": "1.78:1",
+  "color_space": "RGB",
+  "format": "JPEG",
+  "tactical_metadata": {
+    "aesthetic": "Sacred Realism Noir",
+    "recommended_vfx": "KenBurns_Smooth",
+    "safe_area_padding": "15%"
+  }
+}
