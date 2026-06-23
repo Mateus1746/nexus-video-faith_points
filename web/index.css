@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: #2a1c11;
     color: var(--text-main);
     font-family: 'Outfit', sans-serif;
     min-height: 100vh;
