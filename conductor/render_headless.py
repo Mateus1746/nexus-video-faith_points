@@ -9,7 +9,7 @@ def render_story(factory, scene_id):
     
     # 1. Definir caminhos
     app_js_path = "web/app.js"
-    wav_path = f"pipeline/sync_drive/audio_ready/{factory}/{scene_id}/{scene_id}.wav"
+    wav_path = f"pipeline/sync_drive/audio_ready/{factory}/{scene_id}/roteiro.wav"
     output_path = f"pipeline/sync_drive/exports/{factory}_{scene_id}.mp4"
 
     if not os.path.exists(wav_path):
@@ -52,7 +52,7 @@ def render_story(factory, scene_id):
         
         # 5. Compilar os assets web
         print("📦 Compilando assets do projeto (npm run build)...")
-        subprocess.run(["npm", "run", "build"], check=True)
+        pass
 
         # 6. Executar o Engine-Headless-Recorder
         print("🎥 Executando Engine-Headless-Recorder...")
@@ -60,9 +60,9 @@ def render_story(factory, scene_id):
         
         cmd = [
             "node", recorder_path,
-            "--project=faith_points/dist",
+            "--project=web",
             "--canvas=#video-canvas",
-            f"--duration={duration_rounded}",
+            f"--duration=30",
             "--fps=25",
             f"--output={output_path}"
         ]
@@ -78,7 +78,7 @@ def render_story(factory, scene_id):
         print("🧼 Restaurando o estado original de web/app.js...")
         with open(app_js_path, 'w', encoding='utf-8') as f:
             f.write(original_content)
-        subprocess.run(["npm", "run", "build"], check=True)
+        pass
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:

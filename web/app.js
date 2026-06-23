@@ -248,6 +248,7 @@ window.__hf = {
         if (!initialized) {
             await preloadImages();
             initialized = true;
+            window.__appReady = true;
         }
         renderFrameAtTime(timeSeconds);
         await new Promise(resolve => requestAnimationFrame(resolve));
@@ -262,6 +263,7 @@ window.renderFrame = async (timeMs) => {
 window.onload = async () => {
     await preloadImages();
     initialized = true;
+    window.__appReady = true;
     
     // Se não estiver em modo headless, executa o loop real-time
     const isHeadless = new URLSearchParams(window.location.search).get("headless") === "true";
@@ -282,4 +284,63 @@ window.onload = async () => {
         }
         loop();
     }
+};
+// --- FAITH POINTS AESTHETICS ---
+function drawFaithPoints(ctx, t) {
+    ctx.save();
+
+    // Status Bar Background
+    const barWidth = 400;
+    const barHeight = 20;
+    const barX = canvas.width / 2 - barWidth / 2;
+    const barY = canvas.height - 100;
+
+    ctx.fillStyle = "rgba(42, 28, 17, 0.8)"; // Dark brown/parchment background
+    ctx.beginPath();
+    ctx.roundRect(barX, barY, barWidth, barHeight, 10);
+    ctx.fill();
+    ctx.strokeStyle = "#d4af37"; // Gold border
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Progress Bar (glows and fills over time)
+    const progress = (t % 10) / 10; // Loops every 10 seconds for effect
+    const fillWidth = barWidth * progress;
+
+    // Glowing effect
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = "#d4af37";
+    ctx.fillStyle = "#d4af37";
+
+    ctx.beginPath();
+    ctx.roundRect(barX, barY, fillWidth, barHeight, 10);
+    ctx.fill();
+
+    // Morphing Ancient Symbols
+    const symbols = ["☥", "⚡", "♅", "✧", "☾", "✡"];
+    const symbolIndex = Math.floor(t) % symbols.length;
+    const nextSymbolIndex = (symbolIndex + 1) % symbols.length;
+
+    const morphProgress = t % 1;
+
+    ctx.font = "40px 'Outfit'";
+    ctx.fillStyle = "#d4af37";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    // Alpha blending for morphing effect
+    ctx.globalAlpha = 1 - morphProgress;
+    ctx.fillText(symbols[symbolIndex], canvas.width / 2 - 30, barY - 40);
+
+    ctx.globalAlpha = morphProgress;
+    ctx.fillText(symbols[nextSymbolIndex], canvas.width / 2 + 30, barY - 40);
+
+    ctx.restore();
+}
+
+// Modify renderFrameAtTime to call drawFaithPoints
+const originalRenderFrameAtTime = renderFrameAtTime;
+renderFrameAtTime = function(t) {
+    originalRenderFrameAtTime(t);
+    drawFaithPoints(ctx, t);
 };
