@@ -7,7 +7,17 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import { spawn } from 'node:child_process';
+import { spawn, execSync } from 'node:child_process';
+import { createRequire } from 'node:module';
+const _require = createRequire(import.meta.url);
+let _ffmpegPath = 'ffmpeg'; // fallback para sistema
+try {
+  const ffmpegInstaller = _require('@ffmpeg-installer/ffmpeg');
+  _ffmpegPath = ffmpegInstaller.path;
+  console.log(`[FFMPEG] Usando binário embutido: ${_ffmpegPath}`);
+} catch {
+  console.log('[FFMPEG] Binário do sistema (fallback)');
+}
 import os from 'node:os';
 // Ler argumentos simples da linha de comando (ex: --project=olhos --duration=10)
 const args = {};
@@ -40,7 +50,7 @@ const CAPTURE_HEIGHT = Math.round((args.height || 720));
 
 
 const PORT = 8080;
-const PROJECTS_BASE_DIR = path.resolve(__dirname, '../../../../'); // Pasta raiz contendo Engine-Headless-Recorder e nexus_media
+const PROJECTS_BASE_DIR = path.resolve(__dirname, '../../../'); // Pasta raiz contendo Engine-Headless-Recorder e nexus_media
 const OUTPUT_FILE_PATH = args.output 
   ? path.resolve(args.output) 
   : path.resolve(__dirname, `../../../nexus_media/video/${PROJECT_NAME}/genesis_final_SOTA.mp4`);
@@ -142,6 +152,16 @@ async function recordCPU() {
   const server = await startLocalServer();
   let browser;
 
+  // Garantir que os assets Vite estão compilados antes de iniciar o browser
+  try {
+    const projectRoot = path.resolve(__dirname, '../../../..');
+    console.log('[CPU-RECORDER] Executando npm run build para compilar assets Vite...');
+    execSync('npm run build', { cwd: projectRoot, stdio: 'inherit', timeout: 120000 });
+    console.log('[CPU-RECORDER] Build concluído.');
+  } catch (buildErr) {
+    console.warn(`[CPU-RECORDER] Build falhou (continuando mesmo assim): ${buildErr.message}`);
+  }
+
   try {
     console.log(`[CPU-RECORDER] Iniciando modo CPU com ${CPU_WORKERS} workers paralelos`);
     console.log(`[CPU-RECORDER] Resolução de captura: ${CAPTURE_WIDTH}x${CAPTURE_HEIGHT} → upscale 1920x1080`);
@@ -208,7 +228,7 @@ async function recordCPU() {
         OUTPUT_FILE_PATH
       ];
 
-      const ffmpeg = spawn('ffmpeg', ffmpegArgs, { stdio: ['pipe', 'inherit', 'inherit'] });
+      const ffmpeg = spawn(_ffmpegPath, ffmpegArgs, { stdio: ['pipe', 'inherit', 'inherit'] });
       ffmpeg.on('error', err => reject(new Error(`FFmpeg não encontrado: ${err.message}. Instale com: apt-get install ffmpeg`)));
       ffmpeg.on('close', code => {
         if (code === 0) resolve();
@@ -271,12 +291,9 @@ async function record() {
     page.on('pageerror', err => console.error(`[BROWSER ERROR] ${err.toString()}`));
 
     // Abrir a fábrica web correspondente usando o servidor local
-    const projectUrl = `http://127.0.0.1:${PORT}/${PROJECT_NAME}/index.html?headless=true`;
+    const projectUrl = `http://127.0.0.1:${PORT}/nexus_media/video/${PROJECT_NAME}/index.html?headless=true`;
     console.log(`[RECORDER] Navegando para ${projectUrl}`);
     await page.goto(projectUrl, { waitUntil: 'networkidle0' });
-
-    console.log();
-    await page.waitForSelector('canvas', { timeout: 10000 });
 
     console.log(`[RECORDER] Aguardando fontes estarem prontas...`);
     await page.evaluate(() => document.fonts.ready);
@@ -284,7 +301,7 @@ async function record() {
 
     // 1. Injetar o CoreRecorder dinamicamente na página
     console.log(`[RECORDER] Injetando gravador na página...`);
-    await page.addScriptTag({ url: `http://127.0.0.1:${PORT}/tools/Engine-Headless-Recorder/src/browser/recorder-core.js` });
+    await page.addScriptTag({ url: `http://127.0.0.1:${PORT}/Engine-Headless-Recorder/src/browser/recorder-core.js` });
 
     // 2. Inicializar o gravador no contexto do browser
     console.log(`[RECORDER] Inicializando o CoreRecorder e abrindo fluxo fMP4 no OPFS...`);
