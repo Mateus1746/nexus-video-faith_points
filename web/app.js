@@ -248,6 +248,7 @@ window.__hf = {
         if (!initialized) {
             await preloadImages();
             initialized = true;
+            window.__appReady = true;
         }
         renderFrameAtTime(timeSeconds);
         await new Promise(resolve => requestAnimationFrame(resolve));
@@ -262,6 +263,7 @@ window.renderFrame = async (timeMs) => {
 window.onload = async () => {
     await preloadImages();
     initialized = true;
+    window.__appReady = true;
     
     // Se não estiver em modo headless, executa o loop real-time
     const isHeadless = new URLSearchParams(window.location.search).get("headless") === "true";
