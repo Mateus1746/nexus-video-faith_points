@@ -259,6 +259,13 @@ window.renderFrame = async (timeMs) => {
     await window.__hf.seek(timeMs / 1000);
 };
 
+window.initializeScene = async function() {
+    if (!initialized) {
+        await preloadImages();
+        initialized = true;
+    }
+};
+
 // Auto inicialização em live view no navegador
 window.onload = async () => {
     await preloadImages();
