@@ -26,7 +26,7 @@ Para que o gravador headless em \`tools/Engine-Headless-Recorder/src/node/record
 Para gravar qualquer fabrica usando nosso Engine-Headless-Recorder (usualmente localizado em ferramentas), o comando padrao aceita argumentos por CLI de projeto, canvas, duracao e FPS:
 
 \`\`\`bash
-node tools/Engine-Headless-Recorder/src/node/record_video.js --project=<dir> --duration=<segundos>
+node tools/Engine-Headless-Recorder/src/node/record_video.js --canvas=#video-canvas --duration=<segundos> --output=pipeline/sync_drive/exports/output.mp4
 \`\`\`
 
 *(Nota: Alguns destes parametros e configuracoes sao especificos para as fabricas integradas em nexus_media ou projetos individuais como "olhos", verifique os caminhos absolutos usados nos scripts).*
